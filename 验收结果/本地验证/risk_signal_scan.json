@@ -1,0 +1,135 @@
+{
+  "scanned_at": "2026-11-20T18:33:19.990062+00:00",
+  "scan_command_batch": "grep -rinE \"warning|fatal|error|fail|缺失|遗漏\" 验收结果/服务器验证/",
+  "screenshot_archive": [
+    {
+      "source": "01_问卷整体预览_含元数据.png",
+      "target": "Task2441_20261121_A4_preview-full.png",
+      "status": "已归档"
+    },
+    {
+      "source": "02_B部分满意度与NPS.png",
+      "target": "Task2441_20261121_A4_preview-section-b.png",
+      "status": "已归档"
+    },
+    {
+      "source": "03_C部分资源对接与跳转.png",
+      "target": "Task2441_20261121_A4_preview-section-c.png",
+      "status": "已归档"
+    },
+    {
+      "source": "04_试填计时结果.png",
+      "target": "Task2441_20261121_A1_trial-fill-result.png",
+      "status": "已归档"
+    }
+  ],
+  "files_scanned": 13,
+  "total_hits": 0,
+  "details": [
+    {
+      "file": "Task2441_20261121_A1_trial-fill-respondent-1.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 402
+    },
+    {
+      "file": "Task2441_20261121_A1_trial-fill-respondent-2.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 405
+    },
+    {
+      "file": "Task2441_20261121_A1_trial-fill-result.png",
+      "scan_command": "跳过（二进制文件）",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 63394
+    },
+    {
+      "file": "Task2441_20261121_A2_nps_calculate_api-response.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 759
+    },
+    {
+      "file": "Task2441_20261121_A2_nps_rules_api-response.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 508
+    },
+    {
+      "file": "Task2441_20261121_A3_anonymity_scan.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 417
+    },
+    {
+      "file": "Task2441_20261121_A4_preview-full.png",
+      "scan_command": "跳过（二进制文件）",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 573686
+    },
+    {
+      "file": "Task2441_20261121_A4_preview-section-b.png",
+      "scan_command": "跳过（二进制文件）",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 145600
+    },
+    {
+      "file": "Task2441_20261121_A4_preview-section-c.png",
+      "scan_command": "跳过（二进制文件）",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 35826
+    },
+    {
+      "file": "Task2441_20261121_A4_validate_api-response.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 359
+    },
+    {
+      "file": "Task2441_20261121_A6_analysis_plan_api-response.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 1521
+    },
+    {
+      "file": "Task2441_20261121_A7_health_api-response.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 280
+    },
+    {
+      "file": "Task2441_20261121_A7_questionnaire_api-response.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 22894
+    }
+  ],
+  "passed": true
+}

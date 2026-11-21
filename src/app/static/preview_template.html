@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会员问卷预览 · S1-INT-008</title>
+<style>
+  :root {
+    --primary: #0052d9;
+    --primary-light: #e8f0fe;
+    --ink: #1d2129;
+    --ink-2: #4e5969;
+    --line: #e5e6eb;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --ok: #00a870;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .wrap { max-width: 940px; margin: 0 auto; padding: 24px 16px 80px; }
+  .hero { background: linear-gradient(135deg, #0052d9, #4a90ff); color: #fff;
+          border-radius: 12px; padding: 26px 30px; margin-bottom: 18px; }
+  .hero h1 { margin: 0 0 8px; font-size: 24px; }
+  .hero p { margin: 4px 0; font-size: 14px; opacity: .92; }
+  .badges { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35);
+           border-radius: 999px; padding: 3px 12px; font-size: 12px; }
+  .toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+             background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+             padding: 12px 16px; margin-bottom: 18px; }
+  button { border: 0; border-radius: 6px; padding: 9px 18px; font-size: 14px; cursor: pointer; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-ghost { background: var(--primary-light); color: var(--primary); }
+  .timer { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 16px; margin-left: auto; }
+  .meta-toggle { font-size: 13px; color: var(--ink-2); }
+  .section { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+             padding: 18px 22px; margin-bottom: 14px; }
+  .section > h2 { font-size: 16px; margin: 0 0 14px; padding-left: 10px;
+                  border-left: 4px solid var(--primary); }
+  .q { padding: 12px 0; border-top: 1px dashed var(--line); }
+  .q:first-of-type { border-top: 0; }
+  .q-title { font-size: 15px; font-weight: 600; line-height: 1.6; margin-bottom: 8px; }
+  .q-title .qid { color: var(--primary); margin-right: 8px; }
+  .q-title .req { color: #d54941; margin-left: 4px; }
+  .options { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .options label { font-size: 14px; color: var(--ink-2); cursor: pointer;
+                   display: inline-flex; align-items: center; gap: 5px; }
+  .options input { accent-color: var(--primary); }
+  textarea { width: 100%; min-height: 64px; border: 1px solid var(--line); border-radius: 6px;
+             padding: 8px 10px; font-size: 14px; font-family: inherit; resize: vertical; }
+  .meta { margin-top: 8px; background: #f7f9fc; border-left: 3px solid #bbd3ff;
+          padding: 8px 12px; font-size: 12px; color: var(--ink-2); line-height: 1.7;
+          border-radius: 0 6px 6px 0; display: none; }
+  body.show-meta .meta { display: block; }
+  .matrix-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; flex-wrap: wrap; }
+  .matrix-row .label { width: 160px; font-size: 14px; color: var(--ink-2); }
+  .scale-group { display: flex; gap: 6px; flex-wrap: wrap; }
+  .scale-group label { border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px;
+                       font-size: 13px; cursor: pointer; background: #fff; }
+  .scale-group label:has(input:checked) { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+  .scale-group input { accent-color: var(--primary); }
+  .result { display: none; background: #e8fffb; border: 1px solid #00a870; border-radius: 10px;
+            padding: 18px 22px; margin-top: 18px; }
+  .result.show { display: block; }
+  .result h3 { margin: 0 0 8px; color: #007a5a; }
+  .dim { color: var(--ink-2); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>会员问卷预览 · 满意度、NPS 与资源对接诉求</h1>
+    <p>题号 S1-INT-008　|　面向约 100 家会员企业的对接人　|　预计用时 ≤ 8 分钟</p>
+    <p>本问卷匿名：不收集企业名称、姓名与任何联系方式。</p>
+    <div class="badges">
+      <span class="badge" id="badge-count">题目数 —</span>
+      <span class="badge">7 个部分 + 1 道可选回访意愿题</span>
+      <span class="badge">满意度 8 项 · 1–5 分</span>
+      <span class="badge">NPS 0–10 分</span>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn-primary" id="start-btn">开始试填（启动计时）</button>
+    <button class="btn-ghost" id="meta-btn">显示/隐藏题目元数据</button>
+    <button class="btn-primary" id="submit-btn">提交答卷</button>
+    <label class="meta-toggle"><input type="checkbox" id="meta-checkbox"> 显示分析方式</label>
+    <span class="timer" id="timer">未开始</span>
+  </div>
+
+  <div id="sections"></div>
+
+  <div class="result" id="result-panel">
+    <h3>试填完成</h3>
+    <p id="result-text"></p>
+    <p class="dim">本页为问卷平台样式预览与试填计时工具；正式投放请使用导入文件在问卷平台发布。</p>
+  </div>
+</div>
+
+<script id="questionnaire-data" type="application/json">__QUESTIONNAIRE_JSON__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('questionnaire-data').textContent);
+const sectionsEl = document.getElementById('sections');
+const timerEl = document.getElementById('timer');
+const resultEl = document.getElementById('result-panel');
+const resultText = document.getElementById('result-text');
+let startTime = null;
+let timerHandle = null;
+
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function optionInput(q, value, type) {
+  return `<label><input type="${type}" name="${esc(q.qid)}" value="${esc(value)}"> ${esc(value)}</label>`;
+}
+
+function renderQuestion(q) {
+  let body = '';
+  if (q.qtype === '单选题' || q.qtype === '量表题' || q.qtype === 'NPS 评分题') {
+    body = `<div class="options">${q.options.map(o => optionInput(q, o, 'radio')).join('')}</div>`;
+  } else if (q.qtype === '多选题') {
+    body = `<div class="options">${q.options.map(o => optionInput(q, o, 'checkbox')).join('')}</div>`;
+  } else if (q.qtype === '矩阵量表题') {
+    const scale = ['1','2','3','4','5'];
+    body = q.sub_items.map(item => `
+      <div class="matrix-row">
+        <span class="label">${esc(item)}</span>
+        <div class="scale-group">${scale.map(s => `<label><input type="radio" name="${esc(q.qid)}__${esc(item)}" value="${s}"> ${s}</label>`).join('')}</div>
+      </div>`).join('') + `<div class="dim" style="margin-top:6px">${q.options.map(esc).join('；')}</div>`;
+  } else {
+    body = `<textarea name="${esc(q.qid)}" data-qid="${esc(q.qid)}"></textarea>`;
+  }
+
+  const meta = `
+    <div class="meta">
+      <div><b>题型：</b>${esc(q.qtype)}　<b>量表：</b>${esc(q.scale || '—')}　<b>必填：</b>${q.required ? '是' : '否'}</div>
+      <div><b>跳转逻辑：</b>${esc(q.jump)}</div>
+      <div><b>分析方式：</b>${esc(q.analysis)}</div>
+    </div>`;
+
+  const hidden = (q.qid === 'C3' || q.qid === 'E2') ? ' style="display:none"' : '';
+  return `<div class="q" data-qid="${esc(q.qid)}"${hidden}>
+    <div class="q-title"><span class="qid">${esc(q.qid)}</span>${esc(q.title)}<span class="req">${q.required ? ' *' : ''}</span></div>
+    ${body}${meta}
+  </div>`;
+}
+
+sectionsEl.innerHTML = DATA.sections.map(sec => `
+  <div class="section" data-section="${esc(sec.code)}">
+    <h2>${esc(sec.code)} · ${esc(sec.title)}（${sec.questions.length} 题）</h2>
+    ${sec.questions.map(renderQuestion).join('')}
+  </div>`).join('');
+document.getElementById('badge-count').textContent = `题目数 ${DATA.question_count}`;
+
+function applyJump() {
+  const c2 = document.querySelector('input[name="C2"]:checked');
+  const c3 = document.querySelector('.q[data-qid="C3"]');
+  if (c3) c3.style.display = (c2 && c2.value === '是') ? '' : 'none';
+  const e1 = document.querySelector('input[name="E1"]:checked');
+  const e2 = document.querySelector('.q[data-qid="E2"]');
+  if (e2) e2.style.display = (e1 && (e1.value === '经常使用' || e1.value === '偶尔使用')) ? '' : 'none';
+}
+sectionsEl.addEventListener('change', applyJump);
+applyJump();
+
+function tick() {
+  if (!startTime) return;
+  const sec = (Date.now() - startTime) / 1000;
+  timerEl.textContent = `${String(Math.floor(sec / 60)).padStart(2,'0')}:${String(Math.floor(sec % 60)).padStart(2,'0')}`;
+}
+document.getElementById('start-btn').addEventListener('click', () => {
+  startTime = Date.now();
+  timerHandle = setInterval(tick, 250);
+  timerEl.textContent = '00:00';
+  document.getElementById('start-btn').textContent = '计时中…';
+});
+document.getElementById('meta-btn').addEventListener('click', () => document.body.classList.toggle('show-meta'));
+document.getElementById('meta-checkbox').addEventListener('change', e => {
+  document.body.classList.toggle('show-meta', e.target.checked);
+});
+document.getElementById('submit-btn').addEventListener('click', () => {
+  if (!startTime) { resultText.textContent = '请先点击“开始试填（启动计时）”。'; resultEl.classList.add('show'); return; }
+  clearInterval(timerHandle);
+  const elapsedMs = Date.now() - startTime;
+  const answered = sectionsEl.querySelectorAll('input:checked, textarea').length;
+  resultText.textContent = `作答控件数 ${answered}，实测用时 ${(elapsedMs/1000).toFixed(1)} 秒（${(elapsedMs/60000).toFixed(2)} 分钟），限额 480 秒。`;
+  resultEl.classList.add('show');
+  resultEl.dataset.elapsedMs = String(elapsedMs);
+  resultEl.dataset.answered = String(answered);
+  timerEl.textContent = '已提交';
+});
+</script>
+</body>
+</html>

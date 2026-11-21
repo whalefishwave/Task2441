@@ -1,0 +1,15 @@
+{
+  "request": "GET /api/v1/questionnaire/validate",
+  "request_body": null,
+  "status_code": 200,
+  "response": {
+    "question_count": 28,
+    "section_count": 8,
+    "satisfaction_items": 8,
+    "sensitive_hits": [],
+    "blocking_issues": [],
+    "advisories": [],
+    "passed": true
+  },
+  "checked_at": "2026-11-20T18:25:41.407180+00:00"
+}

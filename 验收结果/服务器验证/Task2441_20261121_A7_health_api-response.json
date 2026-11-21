@@ -1,0 +1,12 @@
+{
+  "request": "GET /api/v1/health",
+  "request_body": null,
+  "status_code": 200,
+  "response": {
+    "status": "ok",
+    "service": "member-questionnaire-s1-int-008",
+    "env": "local",
+    "version": "1.0.0"
+  },
+  "checked_at": "2026-11-20T18:25:41.396875+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "profile": "模拟受访者A-高满意路径",
+  "dwell_ms_per_question": 8000,
+  "answered_controls": 35,
+  "elapsed_ms": 225469,
+  "elapsed_seconds": 225.5,
+  "elapsed_minutes": 3.76,
+  "limit_seconds": 480,
+  "within_limit": true,
+  "page_result": "作答控件数 35，实测用时 225.5 秒（3.76 分钟），限额 480 秒。",
+  "checked_at": "2026-11-20T18:29:32.160517+00:00"
+}

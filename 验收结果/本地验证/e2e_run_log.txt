@@ -1,0 +1,11 @@
+base=http://127.0.0.1:8000 dwell_ms=8000
+[HTTP] A7_health: status=200 -> Task2441_20261121_A7_health_api-response.json
+[HTTP] A7_questionnaire: status=200 -> Task2441_20261121_A7_questionnaire_api-response.json
+[HTTP] A4_validate: status=200 -> Task2441_20261121_A4_validate_api-response.json
+[HTTP] A2_nps_rules: status=200 -> Task2441_20261121_A2_nps_rules_api-response.json
+[HTTP] A2_nps_calculate: status=200 -> Task2441_20261121_A2_nps_calculate_api-response.json
+[HTTP] A6_analysis_plan: status=200 -> Task2441_20261121_A6_analysis_plan_api-response.json
+[ANON] hits=0 -> Task2441_20261121_A3_anonymity_scan.json
+[TRIAL] 模拟受访者A-高满意路径: 225.5s within_limit=True
+[TRIAL] 模拟受访者B-改进诉求路径: 209.1s within_limit=True
+verification evidence saved to D:\projects\Clawhunt_New\2026-11-23\Task2441\验收结果\服务器验证

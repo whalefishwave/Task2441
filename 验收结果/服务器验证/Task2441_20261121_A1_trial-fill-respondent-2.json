@@ -1,0 +1,12 @@
+{
+  "profile": "模拟受访者B-改进诉求路径",
+  "dwell_ms_per_question": 8000,
+  "answered_controls": 27,
+  "elapsed_ms": 209080,
+  "elapsed_seconds": 209.1,
+  "elapsed_minutes": 3.48,
+  "limit_seconds": 480,
+  "within_limit": true,
+  "page_result": "作答控件数 27，实测用时 209.1 秒（3.48 分钟），限额 480 秒。",
+  "checked_at": "2026-11-20T18:33:02.951206+00:00"
+}

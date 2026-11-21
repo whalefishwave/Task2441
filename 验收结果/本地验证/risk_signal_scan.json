@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-11-20T18:33:19.990062+00:00",
+  "scanned_at": "2026-11-21T08:54:08.935911+00:00",
   "scan_command_batch": "grep -rinE \"warning|fatal|error|fail|缺失|遗漏\" 验收结果/服务器验证/",
   "screenshot_archive": [
     {
@@ -23,7 +23,7 @@
       "status": "已归档"
     }
   ],
-  "files_scanned": 13,
+  "files_scanned": 14,
   "total_hits": 0,
   "details": [
     {
@@ -129,6 +129,14 @@
       "hit_count": 0,
       "hit_lines": [],
       "size_bytes": 22894
+    },
+    {
+      "file": "Task2441_20261121_D1_github-deploy.json",
+      "scan_command": "grep -inE \"warning|fatal|error|fail|缺失|遗漏\" <结果文件>",
+      "signal": null,
+      "hit_count": 0,
+      "hit_lines": [],
+      "size_bytes": 816
     }
   ],
   "passed": true

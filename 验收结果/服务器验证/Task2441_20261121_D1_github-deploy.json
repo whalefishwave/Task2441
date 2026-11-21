@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-11-21T08:54:05.216172+00:00",
+  "repository": "https://github.com/whalefishwave/Task2441",
+  "default_branch": "main",
+  "commit_sha": "f03659aad093fe28ce855cf7b1ef7e6e878a90a1",
+  "commit_message": "S1-INT-008: deliver anonymous member questionnaire service and evidence",
+  "files_pushed": 50,
+  "remote_tree_blobs": 50,
+  "public_raw_readme": {
+    "url": "https://raw.githubusercontent.com/whalefishwave/Task2441/main/README.md",
+    "http_status": 200,
+    "bytes": 3015
+  },
+  "credential_scan": {
+    "scope": "git history + staged files",
+    "hits": 0
+  },
+  "deployment_method": "git push HTTPS (basic auth, token not persisted in repo or config)",
+  "note": "Token used only in-session via http.extraHeader; not written to any file, remote URL, or git config."
+}
